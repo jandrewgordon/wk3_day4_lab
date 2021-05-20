@@ -1,0 +1,31 @@
+body{
+    background-color: #AA2EE6
+} 
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.event{
+    list-style-type: none;
+    background-size: content;
+    background-color: #FFDF6B;
+    border: 2px solid #23049D;
+    width: 250px;
+}
+
+.event_name{
+    padding-left: 10px;
+    
+    color: dodgerblue
+}
+
+.list_items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*   */
+}
+

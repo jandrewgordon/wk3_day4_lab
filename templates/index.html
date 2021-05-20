@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{title}}</title>
+</head>
+<h1>UPCOMING EVENTS:</h1>
+<body>
+<div class="holder">
+<div class="list_items">
+{% for event in events %}
+<ul>
+    <li class="event">
+        <h2 class="event_name">{{event.name}}</h2>
+        <ul>
+            <li>{{event.date}}</li>
+            <li>Number of guests: {{event.guests}}</li>
+            <li>Room: {{event.room}}</li>
+            <li>Info: {{event.description}}</li>
+            <li>
+                {% if event.recurring %}
+                <span>Recurring: &#9989</span>
+                {% else %}
+                <span>Recurring: &#10060</span>
+                {% endif %}
+            </li>
+            <li>
+                <form action="/delete/{{events.index(event)}}" method="post">
+                    <input type="submit" value="Delete">
+                </form>
+            </li>
+            <br>
+        </ul>        
+    </li>
+</ul>
+{% endfor %}
+</div>
+</div>
+</body>
+</html>
